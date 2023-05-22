@@ -1,0 +1,18 @@
+// greeting.proto file
+// The contents of this file will help us generate the server and client interfaces in go.
+
+syntax = "proto3";
+
+option go_package = "./greeting";
+
+service GreetingService {
+    rpc Greet (GreetingRequest) returns (GreetingResponse) {}
+}
+
+message GreetingRequest {
+    string name = 1;
+}
+
+message GreetingResponse {
+    string message = 1;
+}
